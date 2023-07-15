@@ -1,0 +1,67 @@
+socket --> it end point in network
+	   --> it is concept of OS. That kernel creates socket from both side 
+	       (client and server ).
+
+main objective --> to make basic level of replica of netcat (similar to  
+                   meterpreter or netcat shell).
+
+server listening
+client send connection req
+server accept
+client connected
+server send hello
+client reveive hello
+
+now taking cmd from user without exiting after one cmd
+so we write in "while True" loop.
+server send cmd as to take input from client.
+client use "while true" loop to listen without exiting
+client execute cmd.
+
+why we use subprocess in place of os.system? 
+=>in os.system, if you execute the cmd then surely it's output will we shown on system. also you can't store it's output in varible.
+
+client send "output"
+server receive "output"
+
+scenario1:->
+			if we ctrl+c  and start again then show "oserror:Address already in use".
+				kernel put socket in time mode that you can't use for given time. 
+
+solution -- we use method that is mention below
+
+scenario2:->
+    		server not listen but client send connection
+    		show - ConnectionRefusedError:connection refused
+
+solution -- we try until we connect.using "while true" loop
+             try->break if we connect and except->pass when show error as  
+             ConnectionReFusedError. 
+
+
+to exit from both side-->  we use if condition
+
+
+
+
+
+
+
+method we used here-->
+s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)   # IPV4, TCP
+s.socket(socket.AF_INET6,socket.SOCK_DGRAM)   # IPV6, UDP
+ s.bind(()) # it takes tuple as input
+ s.listen() # it takes input as no. of clients
+ s.connect(())# it takes tuple
+ client,addr = s.accept() #s.accept writes send or receive in client
+ 						  #and ip and port in addr.
+ client.send("")
+ s.recv() # it takes input as no. of bytes to receive
+
+ output= subprocess.getoutput(cmd) # it takes input-->cmd , execute it and store it in
+       output varible.
+
+ s.setsockopt(level,optname,value) 
+ s.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)  #REUSE parameter allows to 
+                                                          use socket again
+

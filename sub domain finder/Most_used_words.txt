@@ -1,0 +1,30 @@
+argparse
+ArgumentParser
+requests
+get,exceptions
+threading
+thread
+time
+
+def prepare_args()
+def prepare_words()
+def prepare_threads()
+def check_subdomain()
+def total_time()
+
+parser
+ArgumentParser()
+.add_argument()
+.parse_args()
+description=
+usage=
+epilog= "example"
+metavar=
+dest=
+type=(int) or type=FileType("r")
+help=
+default=
+action="store_true" or action="version"
+version=
+
+

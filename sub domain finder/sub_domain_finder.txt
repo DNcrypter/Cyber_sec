@@ -1,0 +1,7 @@
+
+
+
+
+==> word=arguments.wordlist.read().split()
+#  read()--> read wordlist as single string
+#   split()--> make list by removing newline between two words

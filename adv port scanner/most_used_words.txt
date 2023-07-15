@@ -1,0 +1,29 @@
+
+
+%(prog)s
+usage 
+epilog
+dest
+help
+dafault=
+action=
+metavar="\b"
+ArgumentParser()
+.parse_args()
+generator function
+yield
+.next()
+.append()
+.join()
+s=socket.socket()
+s.settimeout()
+s.connect((ip,port))
+exeception errors->ConnectionRefusedError,socket.timeout,PermissionError,StopIteration.
+continue
+break
+
+prepare_args()
+prepare_ports()
+scan_ports()
+prepare_threads()
+time_taken()

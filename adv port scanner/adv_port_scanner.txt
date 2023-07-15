@@ -1,0 +1,49 @@
+threads are not unlimited  (avg 500-2000)
+thread should not scan scanned ports
+ 
+ # what is use of  if __name__ == "__main__" ?
+ => if we import the module then value of __name__ changed to __main__ and  restrict to execute fuctions comes under this.
+
+ from argparse import ArgumentParser
+ import socket
+ from threading import Thread
+ from time import time
+
+ def prepare_args():
+ """ prepare arguments
+
+    return:
+      arg(argparse.namespace)  ---> it is self declared data type of argparse.
+
+ """
+
+
+=> to learn python read doc-strings instead of documentation.
+
+
+#creating a parser:-           if we pass %(prog)s argparse understand write program name
+ 
+ parser=ArgumentParser(description="",usage="%(prog)s 192.168.1.2", epilog="Example %(prog)s -s 20 -e 4000 -V 192.168.1.2 " )
+
+ %(prog)s --> show name of file
+ usage -----> here we give minimal usage
+ epilog ----> this print on last
+
+ parser.add_argument("-s","--start",dest=start, type=int, help="starting port", default=1)
+ # here :
+ dest-->destination
+ help --> print help
+ dafault= it is already set value
+ action=store_true --> it will store true in dest= 
+ metavar ---> its name under help section
+
+
+ cocept:-
+ optional arguments ----------> denotes with "-" before variable (ex: "-s")
+ positional arguments --------> its compulsory and position is not fixed.
+
+.parse_args() ---> method of ArgumentParser to return all argument in one variable.
+
+
+generator function --> it is similar to list but it remove that "used_value" after one
+                       use.

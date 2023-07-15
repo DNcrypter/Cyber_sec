@@ -1,0 +1,24 @@
+ threading --> use to run multi task at a one time.
+               (ex: multiple "while true" loops)
+
+ main objective--> to make chating application
+
+ python works on line by line execution. so we use
+  threading.
+
+  it takes user defined fuctions and execute them
+   parallely
+
+lets make chat bot-->
+ server.py, client.py
+
+ 
+making connection
+defining sent_msg and recv_msg fuctions
+writing fuction in Thread()
+note:- we have to make fuction busy to run Thread() continuously .
+       otherwise it will exit. so we run recv_msg() fuction to busy it.
+
+ methods-->
+ t1= threading.Thread(target=Name_of_fuction)
+ t1.start()

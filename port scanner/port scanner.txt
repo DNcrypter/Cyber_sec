@@ -1,0 +1,21 @@
+
+for filename give help 
+declare ip start and end port
+
+if lenght of file >=3 then start=sys.arg[2]
+if len >=4 then end=
+
+define check_port_status (port) function
+	try to-->
+	create socket 
+	settimeout for 1 sec
+	then return true
+	except-> errors(in tupleform)
+	   return false
+
+
+for port in range(start,end)
+
+   response = check_port_status(port)
+   if response:
+   print(f"open port found [{port}]")
